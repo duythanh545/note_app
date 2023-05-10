@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-void signUserIn(BuildContext context, dynamic emailController, dynamic passwordController) async {
+void signUserIn(BuildContext context, dynamic emailController,
+    dynamic passwordController) async {
   //show loading circle
   showDialog(
     context: context,
@@ -16,8 +17,8 @@ void signUserIn(BuildContext context, dynamic emailController, dynamic passwordC
   try {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailController.text, password: passwordController.text);
-    //pop the CircularProgressIndicator()
     Navigator.pop(context);
+
   } on FirebaseAuthException catch (e) {
     //pop the CircularProgressIndicator()
     Navigator.pop(context);

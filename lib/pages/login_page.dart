@@ -53,9 +53,8 @@ class _LoginPageState extends State<LoginPage> {
                     controllerText: emailController,
                   ),
                   const SizedBox(height: 10),
-                  MyTextFiled(
+                  MyTextFiledPassword(
                     label: 'Password',
-                    obscureText: true,
                     controllerText: passwordController,
                   ),
                   const SizedBox(

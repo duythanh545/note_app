@@ -31,10 +31,13 @@ Future editAccountForm(BuildContext context, String docID, String title,
                       },
                       child: Text('Cancel')),
                   const SizedBox(width: 10),
-                  ElevatedButton(onPressed: () {
-                    editAccount(docID, titleController.text, emailController.text, passwordController.text);
-                    Navigator.pop(context);
-                  }, child: Text('Save'))
+                  ElevatedButton(
+                      onPressed: () {
+                        editAccount(docID, titleController.text,
+                            emailController.text, passwordController.text);
+                        Navigator.pop(context);
+                      },
+                      child: Text('Save'))
                 ],
               )
             ],
@@ -46,7 +49,6 @@ Future editAccountForm(BuildContext context, String docID, String title,
 }
 
 Widget textField(String title, String label, TextEditingController controller) {
-
   controller.text = title;
   return TextField(
     controller: controller,
@@ -65,9 +67,7 @@ Future<void> editAccount(
     String docID, String title, String email, String password) {
   return account
       .doc(docID)
-      .update({
-        'title': title
-      })
+      .update({'title': title})
       .then((value) => print("Account Updated"))
       .catchError((error) => print("Failed to update account: $error"));
 }

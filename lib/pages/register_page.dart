@@ -51,15 +51,13 @@ class _RegisterPageState extends State<RegisterPage> {
                     controllerText: emailController,
                   ),
                   const SizedBox(height: 10),
-                  MyTextFiled(
+                  MyTextFiledPassword(
                     label: 'Password',
-                    obscureText: true,
                     controllerText: passwordController,
                   ),
                   const SizedBox(height: 10),
-                  MyTextFiled(
+                  MyTextFiledPassword(
                     label: 'Confirm Password',
-                    obscureText: true,
                     controllerText: confirmPasswordController,
                   ),
                   const SizedBox(
